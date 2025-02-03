@@ -7,35 +7,50 @@
 
 /* Body Styling */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #a8abd1, #041097);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    overflow: hidden;
 }
 
 /* Game Container */
 .game-container {
+    position: relative;
+    max-height: 43.75rem;
+    max-width: 40.625rem;
+    width: 90%;
     text-align: center;
-    max-width: 600px;
-    width: 100%;
+    background: white;
+    padding: 10px 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transform: rotate(-7deg);
 }
 
 /* Color Box */
 .color-box {
-    width: 200px;
-    height: 200px;
-    margin: 20px auto;
-    border-radius: 10px;
+    width: 19rem;
+    height: 7rem;
+    margin: 30px auto;
+    border-radius: 15px;
+    background: #e0e4ff;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    transform: rotate(5deg);
+}
+
+.color-box:hover {
+    transform: rotate(0deg) scale(1.05);
 }
 
 /* Color Options */
 .color-options {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
     margin: 20px 0;
 }
 
@@ -43,25 +58,28 @@ body {
     width: 80px;
     height: 80px;
     border: none;
-    border-radius: 10px;
+    border-radius: 12px;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .color-option:hover {
-    transform: scale(1.1);
+    transform: scale(1.15);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 /* Game Status */
 p {
-    font-size: 1.2em;
-    margin-top: 10px;
+    font-size: 1.3em;
+    margin-top: 15px;
+    color: #444;
 }
 
 /* Score */
 span {
-    font-weight: bold;
-    font-size: 1.5em;
+    font-weight: 600;
+    font-size: 1.8em;
+    color: #4CAF50;
 }
 
 /* New Game Button */
@@ -69,13 +87,15 @@ span {
     background-color: #4CAF50;
     color: white;
     border: none;
-    padding: 10px 20px;
-    font-size: 1.1em;
-    border-radius: 5px;
+    padding: 12px 25px;
+    font-size: 1.2em;
+    border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
 }
 
 .new-game-button:hover {
     background-color: #45a049;
+    transform: scale(1.05);
 }
